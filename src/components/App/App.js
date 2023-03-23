@@ -9,12 +9,12 @@ class App extends Component {
     this.state = {
       movies: [
         {
-          "id": 726739,
-          "poster_path": "https://image.tmdb.org/t/p/original//4BgSWFMW2MJ0dT5metLzsRWO7IJ.jpg",
-          "backdrop_path": "https://image.tmdb.org/t/p/original//t22fWbzdnThPseipsdpwgdPOPCR.jpg",
-          "title": "Cats & Dogs 3: Paws Unite",
-          "average_rating": 7.4,
-          "release_date": "2020-10-02"
+          id: 726739,
+          poster_path: "https://image.tmdb.org/t/p/original//4BgSWFMW2MJ0dT5metLzsRWO7IJ.jpg",
+          backdrop_path: "https://image.tmdb.org/t/p/original//t22fWbzdnThPseipsdpwgdPOPCR.jpg",
+          title: "Cats & Dogs 3: Paws Unite",
+          average_rating: 7.4,
+          release_date: "2020-10-02"
         }
       ]
     }
@@ -24,7 +24,7 @@ class App extends Component {
     return (
       <>
         <Nav />
-        
+        <Collection />
       </>
 
        // return instance of Collection (which has instances of Movie inside) here
