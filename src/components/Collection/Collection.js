@@ -20,6 +20,7 @@ const Collection = ({movies}) => {
                 // rating={movie.average_rating}
                 // releaseData={movie.release_date}
                 key={movie.id}
+                potato={true}
             />
         )
     })

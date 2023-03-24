@@ -13,6 +13,19 @@ import './Movie.css'
 class Movie extends Component {
     constructor() {
         super()
+        this.state = {
+            potato: false
+        }
+    }
+
+    handleHover = event => {
+        console.log('hi')
+        // this runs 3 times each hover for some reason
+        this.setState(prevState => {
+            return {
+                potato: !prevState.potato
+            }
+        })
     }
     
     render(){
@@ -24,11 +37,14 @@ class Movie extends Component {
 
 
         return (
-        <div className="movie">
+        <div className="movie" onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
            <img src={poster_path} className="poster"/>
-            <div>
-                
-            </div>
+           
+                {this.state.potato && 
+                <div className="rating-display">
+                    <h2 className="rating-number">{average_rating.toFixed(1)}</h2>
+                </div>}
+            
         </div>
         )
     }
