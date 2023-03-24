@@ -1,0 +1,29 @@
+.poster{
+    height: 400px;
+    border: solid 3px white;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.poster:hover{
+    border: solid 3px green;
+}
+
+.movie{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rating-display{
+    position: absolute;
+    text-align: center;
+    height: 350px;
+    width: 220px;
+    background-color: rgba(220, 200, 200, .65);
+    border-radius: 10px;
+}
+
+.rating-number {
+    font-size: 5rem;
+}
