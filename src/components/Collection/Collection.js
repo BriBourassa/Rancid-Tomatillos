@@ -1,5 +1,5 @@
 import React from "react";
-import Movie from "../Movie/Movie";
+import MiniMovie from "../MiniMovie/MiniMovie";
 import './Collection.css'
 
 // functional componenet
@@ -11,7 +11,7 @@ const Collection = ({movies}) => {
     const movieList = movies.map(movie => {
 
         return (
-            <Movie
+            <MiniMovie
                 movie = {movie}
                 // id={movie.id}
                 // poster={movie.poster_path}
@@ -20,7 +20,7 @@ const Collection = ({movies}) => {
                 // rating={movie.average_rating}
                 // releaseData={movie.release_date}
                 key={movie.id}
-                potato={true}
+                isHoveredOn={true}
             />
         )
     })

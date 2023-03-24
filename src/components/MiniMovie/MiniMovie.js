@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './Movie.css'
+import './MiniMovie.css'
 
 // class component
 
@@ -10,7 +10,7 @@ import './Movie.css'
 // unhovered: poster & movie title
 // hovered: overlay w/ rating
 
-class Movie extends Component {
+class MiniMovie extends Component {
     constructor() {
         super()
         this.state = {
@@ -23,7 +23,7 @@ class Movie extends Component {
         // this runs 3 times each hover for some reason
         this.setState(prevState => {
             return {
-                potato: !prevState.potato
+                isHoveredOn: !prevState.isHoveredOn
             }
         })
     }
@@ -39,9 +39,9 @@ class Movie extends Component {
         return (
         <div className="movie" onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
            <img src={poster_path} className="poster"/>
-           
-                {this.state.potato && 
+                {this.state.isHoveredOn && 
                 <div className="rating-display">
+                    <h3 className="rating-label">Rating:</h3>
                     <h2 className="rating-number">{average_rating.toFixed(1)}</h2>
                 </div>}
             
@@ -50,6 +50,6 @@ class Movie extends Component {
     }
 };
 
-export default Movie
+export default MiniMovie
 
 // every time something passed, props obj created so it must be destructured

@@ -2,6 +2,8 @@ body {
     color: red;
 }
 .nav{
-    background-color: black;
+    background-color: #0A0A0B; 
     text-align: center;
+    margin-top: 0;
+    padding: 50px;
 }
