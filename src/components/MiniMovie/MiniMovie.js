@@ -1,15 +1,6 @@
 import React, { Component } from "react";
 import './MiniMovie.css'
 
-// class component
-
-// state - clicked/unclicked 
-    // clicked = modal shows
-
-// also needs hover state (conditionally rendered)
-// unhovered: poster & movie title
-// hovered: overlay w/ rating
-
 class MiniMovie extends Component {
     constructor() {
         super()
@@ -34,8 +25,6 @@ class MiniMovie extends Component {
         const {id, poster_path, backdrop_path, title, average_rating, release_date} = movie
         const {handleMovieView} = this.props
         
-
-//if they click on the poster, handleMovieView(event.target.id)
         return (
         <div id={id} className="movie" onMouseEnter={this.handleHover} onMouseLeave={this.handleHover} onClick={(event) => handleMovieView(event.target.id)}>
            <img id={id} src={poster_path} className="poster"/>
@@ -51,5 +40,3 @@ class MiniMovie extends Component {
 };
 
 export default MiniMovie
-
-// every time something passed, props obj created so it must be destructured

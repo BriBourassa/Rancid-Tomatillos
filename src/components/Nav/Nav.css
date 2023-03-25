@@ -1,9 +1,10 @@
 body {
     color: red;
 }
-.nav{
+.nav {
     background-color: #0A0A0B; 
     text-align: center;
     margin-top: 0;
+    margin-bottom: 0;
     padding: 50px;
 }

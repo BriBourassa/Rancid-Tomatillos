@@ -1,0 +1,23 @@
+.movie-details {
+  margin: 100px;
+  background-color: rgba(220, 200, 200, .65);
+  border-radius: 10px;
+  padding: 50px;
+  width: 20vw;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+button {
+  font-size: 1.3rem;
+  padding: 20px;
+  border: solid 3px black;
+  margin-left: 100px;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+p{
+  font-size: 1.3rem;
+}
