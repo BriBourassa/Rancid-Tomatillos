@@ -32,18 +32,17 @@ class MiniMovie extends Component {
         const {movie} = this.props
         // same thing ^^ const movie = props.movie ^^
         const {id, poster_path, backdrop_path, title, average_rating, release_date} = movie
-        console.log("mini movie props", this.props)
         const {handleMovieView} = this.props
         
 
 //if they click on the poster, handleMovieView(event.target.id)
         return (
-        <div className="movie" onMouseEnter={this.handleHover} onMouseLeave={this.handleHover} onClick={handleMovieView}>
-           <img src={poster_path} className="poster"/>
+        <div id={id} className="movie" onMouseEnter={this.handleHover} onMouseLeave={this.handleHover} onClick={(event) => handleMovieView(event.target.id)}>
+           <img id={id} src={poster_path} className="poster"/>
                 {this.state.isHoveredOn && 
-                <div className="rating-display">
-                    <h3 className="rating-label">Rating:</h3>
-                    <h2 className="rating-number">{average_rating.toFixed(1)}</h2>
+                <div id={id} className="rating-display">
+                    <h3 id={id} className="rating-label">Rating:</h3>
+                    <h2 id={id} className="rating-number">{average_rating.toFixed(1)}</h2>
                 </div>}
             
         </div>

@@ -7,7 +7,6 @@ import './Collection.css'
 
 
 const Collection = ({movies, handleMovieView}) => {
-    console.log("collection props", handleMovieView)
     const movieList = movies.map(movie => {
 
         return (

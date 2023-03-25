@@ -3,12 +3,9 @@ import './MovieInfoView'
 
 // functional component
 const MovieInfoView = ({movie}) => {
-  //pass in the whole movie object
-
-  //render something based on the id?
-  //{title ⬇️}
+  const {title} = movie
   return (
-    <h1>{movie.title}</h1>
+    <h1>{title}</h1>
   )
 }
 

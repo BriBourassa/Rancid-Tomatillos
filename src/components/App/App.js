@@ -11,7 +11,8 @@ class App extends Component {
     super();
     this.state = {
       movies:  movieData.movies,
-      collectionView: true
+      collectionView: true,
+      currentMovie: null
     }
   }
 
@@ -19,9 +20,16 @@ class App extends Component {
   //Do we need a new component? 
 
   //id of poster/ miniMovie, then this app state can be set to the id
-  handleMovieView = (event, id) => {
-    this.setState({collectionView: false})
+  handleMovieView = (id) => {
     //set state to be the id as well
+    console.log('id', id)
+    const movie = this.state.movies.find(movie => movie.id === +id)
+    console.log(movie)
+    this.setState({collectionView: false})
+    this.setState({currentMovie: movie}, () => {
+      console.log('hotdog', this.state.currentMovie.title)
+    })
+    
   }
 
   //pass in the id as a prop of Movie Info View
@@ -31,7 +39,7 @@ class App extends Component {
         <Nav />
           <div className='movie-container'>
             {this.state.collectionView && <Collection movies={this.state.movies} handleMovieView={this.handleMovieView}/>}
-            {!this.state.collectionView && <MovieInfoView movie={this.state.movies[10]}/> } 
+            {!this.state.collectionView && <MovieInfoView movie={this.state.currentMovie}/> } 
           </div>
     
       </>
