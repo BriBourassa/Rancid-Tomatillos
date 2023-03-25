@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import movieData from '../../movieData';
 import Collection from '../Collection/Collection';
 import Nav from '../Nav/Nav';
 import MovieInfoView from '../MovieInfoView/MovieInfoView';
@@ -10,10 +9,19 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      movies:  movieData.movies,
+      movies: [],
       collectionView: true,
       currentMovie: null
     }
+  }
+
+  componentDidMount = () => {
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+      .then(res => res.json())
+      .then(data => {
+        // console.log('fetched data', data.movies)
+        this.setState({ movies: data.movies })
+      })
   }
 
   handleMovieView = (id) => {
@@ -21,7 +29,13 @@ class App extends Component {
       this.setState({collectionView: true})
     } else if(id){
       const movie = this.state.movies.find(movie => movie.id === +id)
-      this.setState({collectionView: false, currentMovie: movie})
+
+      fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
+        .then(res => res.json())
+        .then(data => {
+          console.log('dataaaaaaaaa', data.movie)
+          this.setState({collectionView: false, currentMovie: data.movie})
+        })
     }
   }
 
