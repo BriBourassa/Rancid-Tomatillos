@@ -5,14 +5,11 @@
     border-radius: 10px;
 }
 
-.poster:hover{
-    border: solid 3px green;
-}
-
-.movie{
+.movie {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .rating-display{
@@ -26,4 +23,8 @@
 
 .rating-number {
     font-size: 5rem;
+}
+
+.rating-label {
+    font-size: 2.5rem;
 }
