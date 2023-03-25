@@ -14,7 +14,7 @@ class MiniMovie extends Component {
     constructor() {
         super()
         this.state = {
-            potato: false
+            // potato: false this is an unnecessary potato, should this be a functional component
         }
     }
 
@@ -32,12 +32,13 @@ class MiniMovie extends Component {
         const {movie} = this.props
         // same thing ^^ const movie = props.movie ^^
         const {id, poster_path, backdrop_path, title, average_rating, release_date} = movie
-
+        console.log("mini movie props", this.props)
+        const {handleMovieView} = this.props
         
 
-
+//if they click on the poster, handleMovieView(event.target.id)
         return (
-        <div className="movie" onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
+        <div className="movie" onMouseEnter={this.handleHover} onMouseLeave={this.handleHover} onClick={handleMovieView}>
            <img src={poster_path} className="poster"/>
                 {this.state.isHoveredOn && 
                 <div className="rating-display">

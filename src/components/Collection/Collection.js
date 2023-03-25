@@ -6,8 +6,8 @@ import './Collection.css'
 // map through movies
 
 
-const Collection = ({movies}) => {
-
+const Collection = ({movies, handleMovieView}) => {
+    console.log("collection props", handleMovieView)
     const movieList = movies.map(movie => {
 
         return (
@@ -21,6 +21,7 @@ const Collection = ({movies}) => {
                 // releaseData={movie.release_date}
                 key={movie.id}
                 isHoveredOn={true}
+                handleMovieView={handleMovieView}
             />
         )
     })
