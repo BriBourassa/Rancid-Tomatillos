@@ -20,7 +20,6 @@ class App extends Component {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
       .then(res => res.json())
       .then(data => {
-        // console.log('fetched data', data.movies)
         this.setState({ movies: data.movies })
       })
       .catch(err => this.setState({error: err.message}))
@@ -30,34 +29,17 @@ class App extends Component {
     if(id === "button"){
       this.setState({collectionView: true})
     } else if(id){
-      const movie = this.state.movies.find(movie => movie.id === +id)
-
-      // fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-      // .then(res => {
-      //   if(!res.ok){
-      //     console.log('res.status>>>>>>>>', res.status)
-      //     throw new Error('Issue with request: ', res.status);
-      //   }
-      //   return res.json()}
-      // )
       getData(id)
         .then(data => {
-          console.log(data.movie)
           this.setState({ currentMovie: data.movie, collectionView: false })
         })
-        // .then(() => {
-        //   console.log(this.state.movies)
-        //   //this waits for setState() to finish!
-        // })
         .catch(err => {
-          // console.log('this is err>>>>>>', err)
           this.setState({ error: err.message })
         })
     }
 }
 
   render() {
-
     let mainView;
     if(!this.state.collectionView){
       mainView = <MovieInfoView movie={this.state.currentMovie} handleMovieView={this.handleMovieView}/>
@@ -71,22 +53,11 @@ class App extends Component {
       <>
         <Nav />
         <div className='movie-container'>
-          {/* {this.state.error && <h2>{this.state.error}</h2>} */}
-
-          {/* {this.state.collectionView && <Collection movies={this.state.movies} handleMovieView={this.handleMovieView}/>} */}
-          {/* setState is still loading when this is running, other things run before setState is done loading ^^^ */}
-{/* 
-          {!this.state.collectionView && <MovieInfoView movie={this.state.currentMovie} handleMovieView={this.handleMovieView}/> } 
-
-          {this.state.movies.length > 0 && <Collection movies={this.state.movies} handleMovieView={this.handleMovieView}/>} */}
-
           {mainView}
-
         </div>
       </>
     )
   }
-
 };
 
 export default App;

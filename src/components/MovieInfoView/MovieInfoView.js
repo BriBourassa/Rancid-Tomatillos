@@ -1,15 +1,15 @@
 import React from "react";
 import './MovieInfoView.css'
+import PropTypes from 'prop-types';
 
 const MovieInfoView = ({movie, handleMovieView}) => {
-  const {id, poster_path, backdrop_path, title, average_rating, release_date, tagline, runtime, overview, genres} = movie
+  const { backdrop_path, title, average_rating, release_date, tagline, runtime, overview, genres} = movie
   const backgroundStyle = {  
     backgroundImage: "url(" + backdrop_path + ")",
     height: '100vh',
     width: '100vw',
     backgroundSize: "cover"
   }
-
 
   return (
     <>
@@ -23,11 +23,14 @@ const MovieInfoView = ({movie, handleMovieView}) => {
           <p>runtime: {runtime}</p>
           <p>overview: {overview}</p>
           <p>genres: {genres.join(', ')}</p>
-
         </div>
       </div>
     </>
   )
-}
+};
 
 export default MovieInfoView
+
+MovieInfoView.propTypes = {
+  movie: PropTypes.object
+};
