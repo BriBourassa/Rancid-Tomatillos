@@ -42,9 +42,13 @@ class App extends Component {
       // )
       getData(id)
         .then(data => {
-          // console.log(data)
-          this.setState({ ideas: data })
+          console.log(data.movie)
+          this.setState({ currentMovie: data.movie, collectionView: false })
         })
+        // .then(() => {
+        //   console.log(this.state.movies)
+        //   //this waits for setState() to finish!
+        // })
         .catch(err => {
           // console.log('this is err>>>>>>', err)
           this.setState({ error: err.message })
@@ -53,13 +57,31 @@ class App extends Component {
 }
 
   render() {
+
+    let mainView;
+    if(!this.state.collectionView){
+      mainView = <MovieInfoView movie={this.state.currentMovie} handleMovieView={this.handleMovieView}/>
+    } else if (this.state.movies.length > 0) {
+      mainView = <Collection movies={this.state.movies} handleMovieView={this.handleMovieView}/>
+    } else if (this.state.error) {
+      mainView = <h2>{this.state.error}</h2>
+    }
+
     return (
       <>
         <Nav />
         <div className='movie-container'>
-          {this.state.error && <h2>{this.state.error}</h2>}
-          {this.state.collectionView && <Collection movies={this.state.movies} handleMovieView={this.handleMovieView}/>}
+          {/* {this.state.error && <h2>{this.state.error}</h2>} */}
+
+          {/* {this.state.collectionView && <Collection movies={this.state.movies} handleMovieView={this.handleMovieView}/>} */}
+          {/* setState is still loading when this is running, other things run before setState is done loading ^^^ */}
+{/* 
           {!this.state.collectionView && <MovieInfoView movie={this.state.currentMovie} handleMovieView={this.handleMovieView}/> } 
+
+          {this.state.movies.length > 0 && <Collection movies={this.state.movies} handleMovieView={this.handleMovieView}/>} */}
+
+          {mainView}
+
         </div>
       </>
     )
