@@ -5,13 +5,11 @@ class MiniMovie extends Component {
     constructor() {
         super()
         this.state = {
-            // potato: false this is an unnecessary potato, should this be a functional component
+            isHoveredOn: false
         }
     }
 
-    handleHover = event => {
-        console.log('hi')
-        // this runs 3 times each hover for some reason
+    handleHover = () => {
         this.setState(prevState => {
             return {
                 isHoveredOn: !prevState.isHoveredOn
@@ -21,8 +19,7 @@ class MiniMovie extends Component {
     
     render(){
         const {movie} = this.props
-        // same thing ^^ const movie = props.movie ^^
-        const {id, poster_path, backdrop_path, title, average_rating, release_date} = movie
+        const {id, poster_path, average_rating} = movie
         const {handleMovieView} = this.props
         
         return (
@@ -33,7 +30,6 @@ class MiniMovie extends Component {
                     <h3 id={id} className="rating-label">Rating:</h3>
                     <h2 id={id} className="rating-number">{average_rating.toFixed(1)}</h2>
                 </div>}
-            
         </div>
         )
     }
