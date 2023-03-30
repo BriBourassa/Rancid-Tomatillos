@@ -1,6 +1,7 @@
 import React from "react";
 import './MovieInfoView.css'
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom'
 
 const MovieInfoView = ({movie, handleMovieView}) => {
   const { backdrop_path, title, average_rating, release_date, tagline, runtime, overview, genres} = movie
@@ -10,11 +11,13 @@ const MovieInfoView = ({movie, handleMovieView}) => {
     width: '100vw',
     backgroundSize: "cover"
   }
-
+console.log('hi hello this is movie', movie)
   return (
     <>
       <div style={backgroundStyle}>
-      <button id="button" onClick={(event) => handleMovieView(event.target.id)}>🍅 Go Back to Main View 🍅</button>
+      <NavLink to="/">
+        <button id="button" onClick={(event) => handleMovieView(event.target.id)}>🍅 Go Back to Main View 🍅</button>
+      </NavLink>
         <div className="movie-details">
           <h1>🍅 {title} 🍅</h1>
           <p>tagline: {tagline}</p>

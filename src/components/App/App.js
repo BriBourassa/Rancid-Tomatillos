@@ -37,7 +37,7 @@ class App extends Component {
         .catch(err => {
           this.setState({ error: err.message })
         })
-    }
+      }
 }
 
   render() {
@@ -57,27 +57,20 @@ class App extends Component {
 
     let routes= (
       <Switch>
-        <Route exact path="/" render={() => <Collection movies={this.state.movies} handleMovieView={this.handleMovieView}/>}/>
+        <Route  path="/" render={() => <Collection movies={this.state.movies} handleMovieView={this.handleMovieView}/>}/>
 
 
         <Route path="/:movieid" render={({match}) => {
           console.log(match, 'match!!!!!!')
-
-          // const movieToRender = 
-          return
-
-        <MovieInfoView movie={this.state.currentMovie} handleMovieView={this.handleMovieView}/>}
+          if(this.state.currentMovie){
+          return <MovieInfoView movie={this.state.currentMovie} handleMovieView={this.handleMovieView}/>} 
+        }
       }/>
 
+      {/* <Route path=""/> */}
 
 
-        {/* <Route  path='/:movie/:id' render={({match}) => {
-
-          const data = match.params.movie === 'movies' ? movies : sharks
-          const creatureToRender = data.find(puppy => puppy.id === parseInt(match.params.id))
-          return <CreatureDetails {...creatureToRender} />
-        }}> */}
-
+        
       </Switch>
     )
 
