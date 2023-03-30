@@ -32,7 +32,7 @@ class App extends Component {
     } else if(id){
       getData(id)
         .then(data => {
-          this.setState({ currentMovie: data.movie, collectionView: false })
+          this.setState({ currentMovie: data.movie, collectionView: false }, () => {console.log(this.state, 'this is this dot state inside get data!!!!!!!!')})
         })
         .catch(err => {
           this.setState({ error: err.message })
@@ -57,8 +57,7 @@ class App extends Component {
 
     let routes= (
       <Switch>
-        <Route  path="/" render={() => <Collection movies={this.state.movies} handleMovieView={this.handleMovieView}/>}/>
-
+        <Route exact path="/" render={() => <Collection movies={this.state.movies} handleMovieView={this.handleMovieView}/>}/>
 
         <Route path="/:movieid" render={({match}) => {
           console.log(match, 'match!!!!!!')
@@ -68,8 +67,6 @@ class App extends Component {
       }/>
 
       {/* <Route path=""/> */}
-
-
         
       </Switch>
     )

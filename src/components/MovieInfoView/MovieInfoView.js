@@ -15,9 +15,9 @@ console.log('hi hello this is movie', movie)
   return (
     <>
       <div style={backgroundStyle}>
-      <NavLink to="/">
+      {/* <NavLink to="/"> */}
         <button id="button" onClick={(event) => handleMovieView(event.target.id)}>🍅 Go Back to Main View 🍅</button>
-      </NavLink>
+      {/* </NavLink> */}
         <div className="movie-details">
           <h1>🍅 {title} 🍅</h1>
           <p>tagline: {tagline}</p>
