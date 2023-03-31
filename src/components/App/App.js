@@ -46,7 +46,7 @@ class App extends Component {
     return (
       <>
         <Nav />
-            {this.state.error && <h2>{this.state.error}</h2>}
+            {this.state.error && <div className='err-container'><h2 className="error-message">{this.state.error}</h2></div>}
             <div className='movie-container'>
               {routes}
           </div>
