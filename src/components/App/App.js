@@ -4,6 +4,7 @@ import Nav from '../Nav/Nav';
 import MovieInfoView from '../MovieInfoView/MovieInfoView';
 import './App.css';
 import { Route, Switch } from 'react-router-dom'
+import { getAllMovies } from '../../apiCall'
 
 class App extends Component {
   constructor() {
@@ -16,12 +17,11 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-      .then(res => res.json())
-      .then(data => {
-        this.setState({ movies: data.movies })
-      })
-      .catch(err => this.setState({error: err.message}))
+    getAllMovies()
+    .then(data => {
+      this.setState({ movies: data.movies })
+    })
+    .catch(err => this.setState({error: err.message}))
   }
 
   handleMovieView = (id) => {
@@ -29,7 +29,7 @@ class App extends Component {
       this.setState({collectionView: true})
     } else if(id){
       this.setState({collectionView: false})
-      }
+    }
   }
 
   render() {
@@ -46,6 +46,7 @@ class App extends Component {
     return (
       <>
         <Nav />
+            {this.state.error && <h2>{this.state.error}</h2>}
             <div className='movie-container'>
               {routes}
           </div>

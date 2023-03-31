@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import './MovieInfoView.css'
 import PropTypes from 'prop-types';
-import getSingleMovie from "../../apiCall";
+import { getSingleMovie } from "../../apiCall";
 import { NavLink } from 'react-router-dom'
 
 
