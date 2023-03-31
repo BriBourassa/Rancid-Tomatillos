@@ -1,5 +1,5 @@
 
-const getData = (id) => {
+const getSingleMovie = (id) => {
     return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
         .then(res => {
             console.log(id)
@@ -10,4 +10,4 @@ const getData = (id) => {
     )
 }
 
-export default getData
+export default getSingleMovie
