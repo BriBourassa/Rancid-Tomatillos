@@ -14,6 +14,7 @@ const getAllMovies = () => {
   return fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
 		.then(res => {
 			if(!res.ok && res.status === 500) {
+				console.log(res)
 				throw new Error("There was a problem loading the movies, please try again later", res.status)
 			} else if (!res.ok) {
 				throw new Error("There has been an issue, please try again later", res.status)
