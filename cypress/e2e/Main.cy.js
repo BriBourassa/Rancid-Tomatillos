@@ -23,8 +23,6 @@ describe("Main Page Fetch", () => {
   });
 });
 
-
-
 describe("Failed Main Page Fetch", () => {
   it("As a user, I should see an error when failing to fetch all movie data.", () => {
     cy.intercept(

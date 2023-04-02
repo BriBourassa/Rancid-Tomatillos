@@ -4,6 +4,8 @@ import Nav from '../Nav/Nav';
 import MovieInfoView from '../MovieInfoView/MovieInfoView';
 import './App.css';
 import { Route, Switch } from 'react-router-dom'
+import Error from '../Error/Error';
+import { getAllMovies } from '../../apiCall';
 
 class App extends Component {
   constructor() {
@@ -11,17 +13,17 @@ class App extends Component {
     this.state = {
       movies: [],
       collectionView: true,
-      error: ''
+      error: '',
+      isLoading: true
     }
   }
 
   componentDidMount = () => {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-      .then(res => res.json())
-      .then(data => {
-        this.setState({ movies: data.movies })
-      })
-      .catch(err => this.setState({error: err.message}))
+    getAllMovies()
+    .then(data => {
+      this.setState({ movies: data.movies, isLoading: false })
+    })
+    .catch(err => this.setState({error: err.message}))
   }
 
   handleMovieView = (id) => {
@@ -34,19 +36,27 @@ class App extends Component {
 
   render() {
 
+    const loading = this.state.isLoading && <h2 className="loading-text">Loading...</h2>
+
+    const failFetchError = this.state.error && <div className='err-container'><h2 className="error-message">{this.state.error}</h2></div>
+
     let routes= (
       <Switch>
         <Route exact path="/" render={() => <Collection movies={this.state.movies} handleMovieView={this.handleMovieView}/>}/>
-        <Route path="/:movieid" render={({match}) => {
-        return <MovieInfoView movieid={match.params.movieid} handleMovieView={this.handleMovieView}/>}   
-      }/>
+        <Route path="/movies/:movieid" render={({match}) => {
+          return <MovieInfoView movieid={match.params.movieid} handleMovieView={this.handleMovieView}/>}}/>
+          <Route path="/*" render={() => <Error />}/>
+          <Route path="/movies/*" render={() => <Error />}/>
       </Switch>
     )
 
     return (
       <>
         <Nav />
+        {/* <Error failFetchError={this.state.error}/> */}
             <div className='movie-container'>
+              {failFetchError}
+              {loading}
               {routes}
           </div>
       </>
