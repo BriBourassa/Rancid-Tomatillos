@@ -43,12 +43,14 @@ class App extends Component {
       </Switch>
     )
 
+    let errMessage = this.state.error && <div className='err-container'><h2 className="error-message">{this.state.error}</h2></div>
+
     return (
       <>
         <Nav />
-            {this.state.error && <div className='err-container'><h2 className="error-message">{this.state.error}</h2></div>}
-            <div className='movie-container'>
-              {routes}
+          {errMessage}
+          <div className='movie-container'>
+            {routes}
           </div>
       </>
     )

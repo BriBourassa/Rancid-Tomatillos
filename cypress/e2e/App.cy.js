@@ -4,7 +4,7 @@ describe('template spec', () => {
       statusCode: 201,
       fixture: "movies.json"
     })
-    .visit('http://localhost:3000/')
+    cy.visit('http://localhost:3000/')
   });
 
   it('As a user, when I load the application, I can see the title', () => {
