@@ -9,14 +9,15 @@ class MovieInfoView extends Component {
   constructor(){
     super();
     this.state = {
-      currentMovie: ''
+      currentMovie: '',
     }
   }
 
-  componentDidMount = () => {
+  componentDidMount = () => {    
     getSingleMovie(this.props.movieid)
         .then(data => {
-          this.setState({ currentMovie: data.movie })
+          this.setState({ currentMovie: data.movie})
+          // console.log('data.movoie<>>>>>>>>>', data.movie)
         })
         .catch(err => {
           this.setState({ error: err.message })

@@ -3,6 +3,24 @@
   flex-wrap: wrap;
 }
 
+.loading-text{
+  text-align: center;
+}
+
+.err-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.error-message {
+  text-align: center;
+  padding: 50px;
+  background-color: #0A0A0B; 
+  width: 300px;
+  border-radius: 15px;
+}
+
 .err-container {
   margin-top: 50px;
   display: flex;
