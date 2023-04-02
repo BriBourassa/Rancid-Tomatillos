@@ -17,7 +17,6 @@ class MovieInfoView extends Component {
     getSingleMovie(this.props.movieid)
         .then(data => {
           this.setState({ currentMovie: data.movie})
-          // console.log('data.movoie<>>>>>>>>>', data.movie)
         })
         .catch(err => {
           this.setState({ error: err.message })
