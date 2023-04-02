@@ -15,7 +15,11 @@ A single movie view
 This project was our first dive into using React, Cypress, and Router. 
 
 ## Wins and Challenges:
-We really struggled with Cypress and therefore decided to choose adding more tests as our extension. We did both happy and sad paths
+In this project we were learning multiple new technologies, and we decided to double down on our understanding of Cypress as our extension, as well as focus on adding loading states and error handling to our application. 
+
+Testing the hover state in Cypress was a definite challenge, as Cypress doesn't have a fully developed `hover()` command, as you can see in this [github issue](https://github.com/cypress-io/cypress/issues/10). This specific test suite in our project is still in development. 
+
+A big win for us was refactoring our application to include router. I could see our understanding of how to handle different React errors grow as we rapid fire resolved a series of errors as we embarked on a major reorganization.
 
 
 ## Future Iterations:
