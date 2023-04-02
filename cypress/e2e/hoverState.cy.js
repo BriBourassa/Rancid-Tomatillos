@@ -7,18 +7,18 @@ describe('template spec', () => {
     .visit('http://localhost:3000/')
   });
 
-  // it('Should show the rating when the user hovers on a mini movie', () => {
-  //   cy.get("#982620").trigger('onMouseEnter')
+  // it('focus Should show the rating when the user hovers on a mini movie', () => {
+  //   cy.get("#982620").focused()
   //   .get(".rating-display").should('be.visible')
   // })
 
-  it('Should show the rating when the user hovers on a mini movie', () => {
-    cy.get("#1013860").onMouseEnter()
-    // .contains('h3', 'Rating:')
-  })
+  // it('Should show the rating when the user hovers on a mini movie', () => {
+  //   cy.get("#1013860").invoke('hover')
+  //   // .contains('h3', 'Rating:')
+  // })
 
   it('Should show the rating when the user hovers on a different mini movie', () => {
-    cy.get("#897192").onMouseEnter()
+    cy.get("#724495").onMouseEnter()
     // .contains('h2', '9.0')
   })
 

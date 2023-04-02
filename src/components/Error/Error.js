@@ -3,9 +3,9 @@ import "./Error.css";
 
 const Error = () => {
   return (
-    <>
-      <h2>Invalid URL!</h2>
-    </>
+    <div className="err-container">
+      <h2 className="error-message">Invalid URL!</h2>
+    </div>
   );
 };
 

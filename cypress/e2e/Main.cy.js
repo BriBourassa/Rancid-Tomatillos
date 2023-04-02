@@ -33,7 +33,6 @@ describe("Failed Main Page Fetch", () => {
       }
     );
     cy.visit("http://localhost:3000");
-    // cy.get()
-    cy.contains('Issue with request: ');
+    cy.contains('There has been an issue, please try again later');
   })
 });
