@@ -21,6 +21,7 @@ const getAllMovies = () => {
 			return res.json()
 		}
 	)
+      
 }
 
 export { getSingleMovie, getAllMovies }

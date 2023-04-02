@@ -14,3 +14,7 @@ Cypress.Commands.add('loadSingleMovie', () => {
         fixture: "singleMovie.json"
     })
 });
+
+Cypress.Commands.add('onMouseEnter', () => { 
+  cy.get(".rating-display").should('be.visible')
+ })

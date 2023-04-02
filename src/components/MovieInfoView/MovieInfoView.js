@@ -41,12 +41,12 @@ class MovieInfoView extends Component {
             </NavLink>
             <div className="movie-details">
               <h1>🍅 {title} 🍅</h1>
-              <p>tagline: {tagline}</p>
-              <p>release date: {release_date}</p>
-              <p>average rating: {average_rating.toFixed(1)}</p>
-              <p>runtime: {runtime}</p>
-              <p>overview: {overview}</p>
-              <p>genres: {genres.join(', ')}</p>
+              <p className="tagline">{tagline}</p>
+              <p>Release Date: {release_date}</p>
+              <p>Average Rating: {average_rating.toFixed(1)} &#9733;</p>
+              <p>Runtime: {runtime} minutes</p>
+              <p>{overview}</p>
+              <p>{genres.join(', ')}</p>
             </div>
           </div>
         </>

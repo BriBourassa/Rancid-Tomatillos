@@ -6,6 +6,7 @@ import './App.css';
 import { Route, Switch } from 'react-router-dom'
 import Error from '../Error/Error';
 import { getAllMovies } from '../../apiCall';
+import { getAllMovies } from '../../apiCall'
 
 class App extends Component {
   constructor() {
@@ -31,7 +32,7 @@ class App extends Component {
       this.setState({collectionView: true})
     } else if(id){
       this.setState({collectionView: false})
-      }
+    }
   }
 
   render() {
@@ -50,14 +51,17 @@ class App extends Component {
       </Switch>
     )
 
+    let errMessage = this.state.error && <div className='err-container'><h2 className="error-message">{this.state.error}</h2></div>
+
     return (
       <>
         <Nav />
         {/* <Error failFetchError={this.state.error}/> */}
-            <div className='movie-container'>
+          {errMessage}
+          <div className='movie-container'>
               {failFetchError}
               {loading}
-              {routes}
+            {routes}
           </div>
       </>
     )

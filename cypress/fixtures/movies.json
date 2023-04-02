@@ -23,7 +23,31 @@
       "backdrop_path": "https://image.tmdb.org/t/p/original//7zQJYV02yehWrQN6NjKsBorqUUS.jpg",
       "title": "The Woman King",
       "average_rating": 4,
-      "release_date": "2022-09-15"
+      "release_date": "2022-11-09"
+    },
+    {
+      "id": 934641,
+      "poster_path": "https://image.tmdb.org/t/p/original//pUPwTbnAqfm95BZjNBnMMf39ChT.jpg",
+      "backdrop_path": "https://image.tmdb.org/t/p/original//sP1ShE4BGLkHSRqG9ZeGHg6C76t.jpg",
+      "title": "The Minute You Wake Up Dead",
+      "average_rating": 5,
+      "release_date": "2022-11-04"
+    },
+    {
+      "id": 829799,
+      "poster_path": "https://image.tmdb.org/t/p/original//xdmmd437QdjcCls8yCQxrH5YYM4.jpg",
+      "backdrop_path": "https://image.tmdb.org/t/p/original//au4HUSWDRadIcl9CqySlw1kJMfo.jpg",
+      "title": "Paradise City",
+      "average_rating": 1,
+      "release_date": "2022-11-11"
+    },
+    {
+      "id": 972313,
+      "poster_path": "https://image.tmdb.org/t/p/original//fHQHC32dhom8u0OxC2hs2gYQh0M.jpg",
+      "backdrop_path": "https://image.tmdb.org/t/p/original//s65RPy7DiBS4PXvUR3fiTw5f725.jpg",
+      "title": "Blowback",
+      "average_rating": 2,
+      "release_date": "2022-06-17"
     }
   ]
 }
