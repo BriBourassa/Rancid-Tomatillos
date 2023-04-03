@@ -11,6 +11,4 @@ describe('network errors', () => {
     cy.visit('http://localhost:3000')
     cy.contains("There was a problem loading the movies, please try again later")
   })
-
-  
 })

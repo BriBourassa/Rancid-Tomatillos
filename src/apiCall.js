@@ -15,7 +15,9 @@ const getAllMovies = () => {
 			if(!res.ok && res.status === 500) {
 				console.log(res)
 				throw new Error("There was a problem loading the movies, please try again later", res.status)
-			} else if (!res.ok) {
+			} else if(!res.ok && res.status === 404){
+				throw new Error("The page you're looking for doesn't exist, please try again later", res.status)
+			}else if (!res.ok) {
 				throw new Error("There has been an issue, please try again later", res.status)
 			}
 			return res.json()

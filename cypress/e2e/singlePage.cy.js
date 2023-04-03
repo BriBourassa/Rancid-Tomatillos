@@ -2,7 +2,7 @@ describe('Single Movie Page Fetch', () => {
     beforeEach(() => {
       cy.visit('http://localhost:3000/')
       cy.loadSingleMovie();
-      });
+    });
     
 it('As a user, when I click on a movie, I am shown additional details about that movie.', () => {
     cy.intercept(
