@@ -15,12 +15,12 @@ class MovieInfoView extends Component {
 
   componentDidMount = () => {    
     getSingleMovie(this.props.movieid)
-        .then(data => {
-          this.setState({ currentMovie: data.movie})
-        })
-        .catch(err => {
-          this.setState({ error: err.message })
-        })
+      .then(data => {
+        this.setState({ currentMovie: data.movie})
+      })
+      .catch(err => {
+        this.setState({ error: err.message })
+      })
   }
 
   render() {
@@ -53,7 +53,6 @@ class MovieInfoView extends Component {
     }
   }  
 };
-
 
 export default MovieInfoView
 

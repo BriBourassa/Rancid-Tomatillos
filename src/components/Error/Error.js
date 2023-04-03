@@ -1,10 +1,12 @@
 import React from "react";
 import "./Error.css";
 
-const Error = () => {
+const Error = ({err}) => {
+let message = err ? err : "Invalid URL! Please try again"
+
   return (
     <div className="err-container">
-      <h2 className="error-message">Invalid URL!</h2>
+      <h2 className="error-message">{message}</h2>
     </div>
   );
 };
